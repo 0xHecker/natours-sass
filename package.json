@@ -1,0 +1,14 @@
+{
+  "name": "natorious",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile:sass": "node-sass scss/ -o css/ --recursive",
+    "compile-dev:sass": "node-sass scss/ -o css/ --recursive -w "
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.18"
+  }
+}
