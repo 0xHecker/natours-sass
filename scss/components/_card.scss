@@ -16,7 +16,6 @@
         -webkit-backface-visibility: hidden;
         border-radius: 3px;
         overflow: hidden;
-        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
         &--front {
             background-color: $color-white;
@@ -152,6 +151,58 @@
     &__price-value {
         font-weight: 300;
         font-size: 6rem;
+    }
+
+
+    @include respond(tab-port) {
+        height: auto;
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &__side {
+            height: auto;
+            position: relative;
+    
+            &--back {
+                transform: rotateY(0deg) ;
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &__details {
+            padding: 1rem 3rem;
+        }
+    
+        &:hover &__side--front { // when hovered set .card__side--front the following properties
+            transform: rotateY(0deg);
+        }
+
+        // Back side styling
+        &__cta {
+            position: relative;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            text-align: center;
+            padding: 7rem 4rem 4rem 4rem;
+            transform: translate(0);
+        }
+    
+        &__price--box{
+            margin-bottom: 3rem;
+        }
+        
+        &__price-only {
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+    
+        &__price-value {
+            font-weight: 300;
+            font-size: 4rem;
+        }
     }
 
 }
